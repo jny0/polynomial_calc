@@ -12,9 +12,15 @@ class Calc{
     public static int run(String exp){
 
         boolean needToMulti = exp.contains("*");
-        boolean needToPlus = !needToMulti;
+        boolean needToPlus = exp.contains("+") || exp.contains("-");
 
-        if(needToPlus){
+        boolean needToCompound = needToMulti && needToPlus;
+
+        if ( needToCompound ) {
+            String[] bits = exp.split(" \\+ ");
+
+            return Integer.parseInt(bits[0]) + run(bits[1]);
+        } else if(needToPlus){
             exp = exp.replaceAll("- ", "+ -");
 
             String[] bits = exp.split(" \\+ ");
