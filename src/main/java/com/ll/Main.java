@@ -11,16 +11,9 @@ public class Main {
 class Calc{
     public static int run(String exp){
 
-        boolean needToPlus = exp.contains("+");
-        boolean needToMinus = exp.contains("-");
+        exp = exp.replaceAll("- ", "+ -");
 
-        String[] bits = null;
-
-        if (needToPlus) {
-            bits = exp.split(" \\+ ");
-        } else if (needToMinus) {
-            bits = exp.split(" \\- ");
-        }
+        String[] bits = exp.split(" \\+ ");
 
         int a = Integer.parseInt(bits[0]);
         int b = Integer.parseInt(bits[1]);
@@ -30,13 +23,9 @@ class Calc{
             c = Integer.parseInt(bits[2]);
         }
 
-        if (needToPlus) {
-            return a + b + c;
-        } else if (needToMinus) {
-            return a - b - c;
-        }
+        return a + b + c;
 
-        throw new RuntimeException("올바른 계산식이 아닙니다.");
+        //throw new RuntimeException("올바른 계산식이 아닙니다.");
     }
 
 }
