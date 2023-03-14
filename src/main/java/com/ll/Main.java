@@ -1,6 +1,7 @@
 package com.ll;
 
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -10,16 +11,24 @@ public class Main {
 
 class Calc{
     public static int run(String exp){
+        // 단일항이 입력되면 바로 리턴
+        if(!exp.contains(" ")) return Integer.parseInt(exp);
 
-        boolean needToMulti = exp.contains("*");
-        boolean needToPlus = exp.contains("+") || exp.contains("-");
+        boolean needToMulti = exp.contains(" * ");
+        boolean needToPlus = exp.contains(" + ") || exp.contains(" - ");
 
         boolean needToCompound = needToMulti && needToPlus;
 
         if ( needToCompound ) {
             String[] bits = exp.split(" \\+ ");
 
-            return Integer.parseInt(bits[0]) + run(bits[1]);
+            String newExp = Arrays.stream(bits)
+                    .mapToInt(Calc::run)
+                    .mapToObj(e -> e + "")
+                    .collect(Collectors.joining(" + "));
+
+            return run(newExp);
+
         } else if(needToPlus){
             exp = exp.replaceAll("- ", "+ -");
 
