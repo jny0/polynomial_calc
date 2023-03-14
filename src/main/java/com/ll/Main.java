@@ -31,10 +31,31 @@ class Calc{
 
         boolean needToMulti = exp.contains(" * ");
         boolean needToPlus = exp.contains(" + ") || exp.contains(" - ");
+        boolean needToSplit = exp.contains("(") || exp.contains(")");
 
         boolean needToCompound = needToMulti && needToPlus;
 
-        if ( needToCompound ) {
+        if( needToSplit ){
+            int bracketsCount = 0;
+            int splitPointIndex = 0;
+
+            for(int i=0; i<exp.length(); i++){
+                if(exp.charAt(i)=='('){
+                    bracketsCount++;
+                }else if(exp.charAt(i)==')'){
+                    bracketsCount--;
+                }
+                if( bracketsCount ==0 ){
+                    splitPointIndex = i;
+                    break;
+                }
+            }
+
+            String firstExp = exp.substring(0, splitPointIndex + 1);
+            String secondExp = exp.substring(splitPointIndex + 4);
+
+            return Calc.run(firstExp) + Calc.run(secondExp);
+        }else if ( needToCompound ) {
             String[] bits = exp.split(" \\+ ");
 
             String newExp = Arrays.stream(bits)
