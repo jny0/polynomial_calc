@@ -3,23 +3,8 @@ package com.ll;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Hello world!");
-    }
-}
 
-class Calc{
-    private static String stripOuterBrackets(String exp){
-        int outerBracketsCount = 0;
-        while(exp.charAt(outerBracketsCount) == '(' && exp.charAt(exp.length() - 1 - outerBracketsCount)== ')'){
-            outerBracketsCount++;
-        }
-        if ( outerBracketsCount == 0 ) return exp;
-
-        return exp.substring(outerBracketsCount, exp.length() - outerBracketsCount);
-    }
-
+public class Calc{
     public static int run(String exp){
         // 쓸데없는 괄호 제거
         exp = stripOuterBrackets(exp);
@@ -91,6 +76,16 @@ class Calc{
         }
 
         throw new RuntimeException("올바른 계산식이 아닙니다.");
+    }
+
+    private static String stripOuterBrackets(String exp){
+        int outerBracketsCount = 0;
+        while(exp.charAt(outerBracketsCount) == '(' && exp.charAt(exp.length() - 1 - outerBracketsCount)== ')'){
+            outerBracketsCount++;
+        }
+        if ( outerBracketsCount == 0 ) return exp;
+
+        return exp.substring(outerBracketsCount, exp.length() - outerBracketsCount);
     }
 
 }
