@@ -9,6 +9,10 @@ public class Calc {
     public static int runCallCount = 0;
 
     public static int run(String exp) {
+        return _run(exp, 0);
+    }
+
+    private static int _run(String exp, int depth) {
         runCallCount++;
 
         exp = exp.trim();
@@ -23,7 +27,8 @@ public class Calc {
         exp = stripOuterBrackets(exp);
 
         if (debug) {
-            System.out.printf("exp(%d) : %s\n", runCallCount, exp);
+            System.out.print(" ".repeat(depth * 4));
+            System.out.printf("exp(%d in %d) : %s\n", runCallCount, depth, exp);
         }
 
         // 단일항이 입력되면 바로 리턴
@@ -44,18 +49,18 @@ public class Calc {
 
             char operationCode = exp.charAt(splitPointIndex);
 
-            exp = Calc.run(firstExp) + " " + operationCode + " " + Calc.run(secondExp);
+            exp = Calc._run(firstExp, depth + 1) + " " + operationCode + " " + Calc._run(secondExp, depth + 1);
 
-            return Calc.run(exp);
+            return Calc._run(exp, depth + 1);
         } else if (needToCompound) {
             String[] bits = exp.split(" \\+ ");
 
             String newExp = Arrays.stream(bits)
-                    .mapToInt(Calc::run)
+                    .mapToInt(e -> Calc._run(e, depth + 1))
                     .mapToObj(e -> e + "")
                     .collect(Collectors.joining(" + "));
 
-            return run(newExp);
+            return _run(newExp, depth + 1);
 
         } else if (needToPlus) {
             exp = exp.replaceAll("- ", "+ -");
@@ -118,6 +123,7 @@ public class Calc {
 
         return null;
     }
+
     private static int findSplitPointIndexBy(String exp, char findChar) {
         int bracketsCount = 0;
 

@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">27</div>
+<div class="counter">28</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.143s</div>
+<div class="counter">0.118s</div>
 <p>duration</p>
 </div>
 </td>
@@ -81,7 +81,7 @@
 <tr>
 <td class="success">1 + 1 == 2</td>
 <td class="success">t1()</td>
-<td class="success">0.072s</td>
+<td class="success">0.050s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -93,7 +93,7 @@
 <tr>
 <td class="success">10 - 10 - 10 - 10 + 10 + 10 - 10 == -10</td>
 <td class="success">t11()</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -111,7 +111,7 @@
 <tr>
 <td class="success">10 * 10 * 10 == 1000</td>
 <td class="success">t14()</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -123,7 +123,7 @@
 <tr>
 <td class="success">20 + 10 + 5 * 2 == 40</td>
 <td class="success">t16()</td>
-<td class="success">0.002s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -135,19 +135,19 @@
 <tr>
 <td class="success">(10 + 20) == 30</td>
 <td class="success">t18()</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">((10 + 20)) == 30</td>
 <td class="success">t19()</td>
-<td class="success">0.003s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">2 + 1 == 3</td>
 <td class="success">t2()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -159,13 +159,13 @@
 <tr>
 <td class="success">(20 + 20) + 20 == 60</td>
 <td class="success">t21()</td>
-<td class="success">0.014s</td>
+<td class="success">0.011s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">((20 + 20)) + 20 == 60</td>
 <td class="success">t22()</td>
-<td class="success">0.001s</td>
+<td class="success">0.002s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -177,25 +177,31 @@
 <tr>
 <td class="success">10 + (10 + 5) == 25</td>
 <td class="success">t24()</td>
-<td class="success">0.001s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">-(10 + 5) == -15</td>
 <td class="success">t25()</td>
-<td class="success">0.010s</td>
+<td class="success">0.009s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">-(8 + 2) * -(7 + 3) + 5 == 105</td>
 <td class="success">t26()</td>
-<td class="success">0.004s</td>
+<td class="success">0.003s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">5 - (1 + 5) == -1</td>
 <td class="success">t27()</td>
-<td class="success">0.002s</td>
+<td class="success">0.007s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">3 * 1 + (1 - (4 * 1 - (1 - 1))) == 0</td>
+<td class="success">t28()</td>
+<td class="success">0.004s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -207,7 +213,7 @@
 <tr>
 <td class="success">1000 + 280 == 1280</td>
 <td class="success">t4()</td>
-<td class="success">0.004s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -225,7 +231,7 @@
 <tr>
 <td class="success">100 - 20 == 80</td>
 <td class="success">t7()</td>
-<td class="success">0.002s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
@@ -237,7 +243,7 @@
 <tr>
 <td class="success">10 - 20 + 30 == 20</td>
 <td class="success">t9()</td>
-<td class="success">0.004s</td>
+<td class="success">0.001s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -245,77 +251,93 @@
 <div id="tab1" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>exp(1) : 1 + 1
-exp(2) : 2 + 1
-exp(3) : 2 + 2
-exp(4) : 1000 + 280
-exp(5) : 2 - 1
-exp(6) : 3 - 1
-exp(7) : 100 - 20
-exp(8) : 10 + 20 + 30
-exp(9) : 10 - 20 + 30
-exp(10) : 10 - 10 - 10 - 10
-exp(11) : 10 - 10 - 10 - 10 + 10 + 10 - 10
-exp(12) : 10 * 10
-exp(13) : 10 * -10
-exp(14) : 10 * 10 * 10
-exp(15) : 10 + 5 * 2
-exp(16) : 10
-exp(17) : 5 * 2
-exp(18) : 10 + 10
-exp(19) : 20 + 10 + 5 * 2
-exp(20) : 20
-exp(21) : 10
-exp(22) : 5 * 2
-exp(23) : 20 + 10 + 10
-exp(24) : 10 * 20 + 10 + 5 * 2
-exp(25) : 10 * 20
-exp(26) : 10
-exp(27) : 5 * 2
-exp(28) : 200 + 10 + 10
-exp(29) : 10 + 20
-exp(30) : 10 + 20
-exp(31) : 10 + 20
-exp(32) : (20 + 20) + 20
-exp(33) : 20 + 20
-exp(34) : 20
-exp(35) : 40 + 20
-exp(36) : ((20 + 20)) + 20
-exp(37) : 20 + 20
-exp(38) : 20
-exp(39) : 40 + 20
-exp(40) : (10 + 20) * 3
-exp(41) : 10 + 20
-exp(42) : 3
-exp(43) : 30 * 3
-exp(44) : 10 + (10 + 5)
-exp(45) : 10
-exp(46) : 10 + 5
-exp(47) : 10 + 15
-exp(48) : (10 + 5) * -1
-exp(49) : 10 + 5
-exp(50) : -1
-exp(51) : 15 * -1
-exp(52) : ((8 + 2) * -1) * ((7 + 3) * -1) + 5
-exp(53) : ((8 + 2) * -1) * ((7 + 3) * -1)
-exp(54) : (8 + 2) * -1
-exp(55) : 8 + 2
-exp(56) : -1
-exp(57) : 10 * -1
-exp(58) : (7 + 3) * -1
-exp(59) : 7 + 3
-exp(60) : -1
-exp(61) : 10 * -1
-exp(62) : -10 * -10
-exp(63) : 5
-exp(64) : 100 + 5
-exp(65) : 5 - (1 + 5)
-exp(66) : 5
-exp(67) : (1 + 5) * -1
-exp(68) : 1 + 5
-exp(69) : -1
-exp(70) : 6 * -1
-exp(71) : 5 + -6
+<pre>exp(1 in 0) : 1 + 1
+exp(2 in 0) : 2 + 1
+exp(3 in 0) : 2 + 2
+exp(4 in 0) : 1000 + 280
+exp(5 in 0) : 2 - 1
+exp(6 in 0) : 3 - 1
+exp(7 in 0) : 100 - 20
+exp(8 in 0) : 10 + 20 + 30
+exp(9 in 0) : 10 - 20 + 30
+exp(10 in 0) : 10 - 10 - 10 - 10
+exp(11 in 0) : 10 - 10 - 10 - 10 + 10 + 10 - 10
+exp(12 in 0) : 10 * 10
+exp(13 in 0) : 10 * -10
+exp(14 in 0) : 10 * 10 * 10
+exp(15 in 0) : 10 + 5 * 2
+    exp(16 in 1) : 10
+    exp(17 in 1) : 5 * 2
+    exp(18 in 1) : 10 + 10
+exp(19 in 0) : 20 + 10 + 5 * 2
+    exp(20 in 1) : 20
+    exp(21 in 1) : 10
+    exp(22 in 1) : 5 * 2
+    exp(23 in 1) : 20 + 10 + 10
+exp(24 in 0) : 10 * 20 + 10 + 5 * 2
+    exp(25 in 1) : 10 * 20
+    exp(26 in 1) : 10
+    exp(27 in 1) : 5 * 2
+    exp(28 in 1) : 200 + 10 + 10
+exp(29 in 0) : 10 + 20
+exp(30 in 0) : 10 + 20
+exp(31 in 0) : 10 + 20
+exp(32 in 0) : (20 + 20) + 20
+    exp(33 in 1) : 20 + 20
+    exp(34 in 1) : 20
+    exp(35 in 1) : 40 + 20
+exp(36 in 0) : ((20 + 20)) + 20
+    exp(37 in 1) : 20 + 20
+    exp(38 in 1) : 20
+    exp(39 in 1) : 40 + 20
+exp(40 in 0) : (10 + 20) * 3
+    exp(41 in 1) : 10 + 20
+    exp(42 in 1) : 3
+    exp(43 in 1) : 30 * 3
+exp(44 in 0) : 10 + (10 + 5)
+    exp(45 in 1) : 10
+    exp(46 in 1) : 10 + 5
+    exp(47 in 1) : 10 + 15
+exp(48 in 0) : (10 + 5) * -1
+    exp(49 in 1) : 10 + 5
+    exp(50 in 1) : -1
+    exp(51 in 1) : 15 * -1
+exp(52 in 0) : ((8 + 2) * -1) * ((7 + 3) * -1) + 5
+    exp(53 in 1) : ((8 + 2) * -1) * ((7 + 3) * -1)
+        exp(54 in 2) : (8 + 2) * -1
+            exp(55 in 3) : 8 + 2
+            exp(56 in 3) : -1
+            exp(57 in 3) : 10 * -1
+        exp(58 in 2) : (7 + 3) * -1
+            exp(59 in 3) : 7 + 3
+            exp(60 in 3) : -1
+            exp(61 in 3) : 10 * -1
+        exp(62 in 2) : -10 * -10
+    exp(63 in 1) : 5
+    exp(64 in 1) : 100 + 5
+exp(65 in 0) : 5 - (1 + 5)
+    exp(66 in 1) : 5
+    exp(67 in 1) : (1 + 5) * -1
+        exp(68 in 2) : 1 + 5
+        exp(69 in 2) : -1
+        exp(70 in 2) : 6 * -1
+    exp(71 in 1) : 5 + -6
+exp(72 in 0) : 3 * 1 + (1 - (4 * 1 - (1 - 1)))
+    exp(73 in 1) : 3 * 1
+    exp(74 in 1) : 1 + ((4 * 1 + ((1 + -1) * -1)) * -1)
+        exp(75 in 2) : 1
+        exp(76 in 2) : (4 * 1 + ((1 + -1) * -1)) * -1
+            exp(77 in 3) : 4 * 1 + ((1 + -1) * -1)
+                exp(78 in 4) : 4 * 1
+                exp(79 in 4) : (1 + -1) * -1
+                    exp(80 in 5) : 1 + -1
+                    exp(81 in 5) : -1
+                    exp(82 in 5) : 0 * -1
+                exp(83 in 4) : 4 + 0
+            exp(84 in 3) : -1
+            exp(85 in 3) : 4 * -1
+        exp(86 in 2) : 1 + -4
+    exp(87 in 1) : 3 + -3
 </pre>
 </span>
 </div>
@@ -327,7 +349,7 @@ exp(71) : 5 + -6
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5.1</a> at 2023. 4. 5. 오전 11:46:52</p>
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at 2023. 4. 5. 오후 1:03:19</p>
 </div>
 </div>
 </body>
