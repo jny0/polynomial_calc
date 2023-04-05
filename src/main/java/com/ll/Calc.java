@@ -36,6 +36,7 @@ public class Calc {
         boolean needToCompound = needToMulti && needToPlus;
 
         if (needToSplit) {
+            exp = exp.replaceAll("- ", "+ -");
             int splitPointIndex = findSplitPointIndex(exp);
 
             String firstExp = exp.substring(0, splitPointIndex);
